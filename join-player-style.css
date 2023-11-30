@@ -2,6 +2,7 @@
 	position: relative;
 	overflow: hidden;
 	perspective: 500px;
+	height: 100%;
 }
 .join-widget-list li {
 	height: 88px;
@@ -23,7 +24,7 @@
 }
 
 .join-modal-container.mounted .join-stories-player>.active iframe {
-	/* pointer-events: all; */
+	pointer-events: all;
 }
 
 .join-stories-player .join-story-player iframe {
@@ -47,7 +48,7 @@
 }
 
 .join-stories-player>.active {
-	/* transform: translate3d(0, 0, -100vw); */
+	transform: translate3d(0, 0, -100vw);
 	z-index: 10;
 }
 
@@ -63,7 +64,7 @@
 
 @media screen and (min-aspect-ratio:3 / 4) {
 	.join-stories-player>.active {
-		/* transform: translate3d(0, 0, -100vw); */
+		transform: translate3d(0, 0, -100vw);
 		z-index: 10;
 	}
 
