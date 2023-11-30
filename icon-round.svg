@@ -1,0 +1,135 @@
+<svg class="join-bubble" width="100%" height="100%" viewBox="0 0 100 100">
+    <filter id="grayscale">
+        <feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"></feColorMatrix>
+    </filter>
+    <filter id="dropshadow" height="130%">
+  <feGaussianBlur in="SourceAlpha" stdDeviation="3"></feGaussianBlur>
+  <feOffset dx="0" dy="1" result="offsetblur"></feOffset>
+  <feComponentTransfer>
+    <feFuncA type="linear" slope=".5"></feFuncA>
+  </feComponentTransfer>
+  <feMerge>
+    <feMergeNode></feMergeNode>
+    <feMergeNode in="SourceGraphic"></feMergeNode>
+  </feMerge>
+</filter>
+    <circle class="shadowCircle" style="filter: url(#dropshadow);" stroke-width="3" stroke="#000" stroke-opacity=".5" fill="none" cx="50" cy="50" r="50"></circle>
+    <circle class="innerColor" fill="#FFFFFF" cx="50" cy="50" r="50"></circle>
+    <g class="sections-canvas"><linearGradient id="linearColors0_t8791" x1="0.00" y1="1.00" x2="0.11" y2="0.00">
+<stop offset="0%" stop-color="#f0323c"></stop>
+<stop offset="100%" stop-color="#f23c3e"></stop>
+</linearGradient>
+    <path class="section" d="M 0.00 50.00 A 50 50 0 0 1 1.17 39.25" fill="none" stroke="url(#linearColors0_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors1_t8791" x1="0.00" y1="1.00" x2="0.34" y2="0.00">
+<stop offset="0%" stop-color="#f23c3e"></stop>
+<stop offset="100%" stop-color="#f44540"></stop>
+</linearGradient>
+    <path class="section" d="M 1.17 39.25 A 50 50 0 0 1 4.62 29.01" fill="none" stroke="url(#linearColors1_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors2_t8791" x1="0.00" y1="1.00" x2="0.60" y2="0.00">
+<stop offset="0%" stop-color="#f44540"></stop>
+<stop offset="100%" stop-color="#f64f42"></stop>
+</linearGradient>
+    <path class="section" d="M 4.62 29.01 A 50 50 0 0 1 10.20 19.74" fill="none" stroke="url(#linearColors2_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors3_t8791" x1="0.00" y1="1.00" x2="0.95" y2="0.00">
+<stop offset="0%" stop-color="#f64f42"></stop>
+<stop offset="100%" stop-color="#f85944"></stop>
+</linearGradient>
+    <path class="section" d="M 10.20 19.74 A 50 50 0 0 1 17.63 11.89" fill="none" stroke="url(#linearColors3_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors4_t8791" x1="0.00" y1="0.68" x2="1.00" y2="0.00">
+<stop offset="0%" stop-color="#f85944"></stop>
+<stop offset="100%" stop-color="#fa6246"></stop>
+</linearGradient>
+    <path class="section" d="M 17.63 11.89 A 50 50 0 0 1 26.58 5.82" fill="none" stroke="url(#linearColors4_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors5_t8791" x1="0.00" y1="0.40" x2="1.00" y2="0.00">
+<stop offset="0%" stop-color="#fa6246"></stop>
+<stop offset="100%" stop-color="#fc6c48"></stop>
+</linearGradient>
+    <path class="section" d="M 26.58 5.82 A 50 50 0 0 1 36.62 1.82" fill="none" stroke="url(#linearColors5_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors6_t8791" x1="0.00" y1="0.16" x2="1.00" y2="0.00">
+<stop offset="0%" stop-color="#fc6c48"></stop>
+<stop offset="100%" stop-color="#fe764a"></stop>
+</linearGradient>
+    <path class="section" d="M 36.62 1.82 A 50 50 0 0 1 47.29 0.07" fill="none" stroke="url(#linearColors6_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors7_t8791" x1="0.00" y1="0.00" x2="1.00" y2="0.05">
+<stop offset="0%" stop-color="#fe764a"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 47.29 0.07 A 50 50 0 0 1 58.09 0.66" fill="none" stroke="url(#linearColors7_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors8_t8791" x1="0.00" y1="0.00" x2="1.00" y2="0.28">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 58.09 0.66 A 50 50 0 0 1 68.51 3.55" fill="none" stroke="url(#linearColors8_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors9_t8791" x1="0.00" y1="0.00" x2="1.00" y2="0.53">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 68.51 3.55 A 50 50 0 0 1 78.06 8.62" fill="none" stroke="url(#linearColors9_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors10_t8791" x1="0.00" y1="0.00" x2="1.00" y2="0.85">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 78.06 8.62 A 50 50 0 0 1 86.30 15.62" fill="none" stroke="url(#linearColors10_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors11_t8791" x1="0.00" y1="0.00" x2="0.76" y2="1.00">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 86.30 15.62 A 50 50 0 0 1 92.84 24.22" fill="none" stroke="url(#linearColors11_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors12_t8791" x1="0.00" y1="0.00" x2="0.46" y2="1.00">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 92.84 24.22 A 50 50 0 0 1 97.38 34.03" fill="none" stroke="url(#linearColors12_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors13_t8791" x1="0.00" y1="0.00" x2="0.22" y2="1.00">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff784b"></stop>
+</linearGradient>
+    <path class="section" d="M 97.38 34.03 A 50 50 0 0 1 99.71 44.59" fill="none" stroke="url(#linearColors13_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors14_t8791" x1="0.00" y1="0.00" x2="0.00" y2="1.00">
+<stop offset="0%" stop-color="#ff784b"></stop>
+<stop offset="100%" stop-color="#ff7046"></stop>
+</linearGradient>
+    <path class="section" d="M 99.71 44.59 A 50 50 0 0 1 99.71 55.41" fill="none" stroke="url(#linearColors14_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors15_t8791" x1="0.22" y1="0.00" x2="0.00" y2="1.00">
+<stop offset="0%" stop-color="#ff7046"></stop>
+<stop offset="100%" stop-color="#ff5f3b"></stop>
+</linearGradient>
+    <path class="section" d="M 99.71 55.41 A 50 50 0 0 1 97.38 65.97" fill="none" stroke="url(#linearColors15_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors16_t8791" x1="0.46" y1="0.00" x2="0.00" y2="1.00">
+<stop offset="0%" stop-color="#ff5f3b"></stop>
+<stop offset="100%" stop-color="#ff4f31"></stop>
+</linearGradient>
+    <path class="section" d="M 97.38 65.97 A 50 50 0 0 1 92.84 75.78" fill="none" stroke="url(#linearColors16_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors17_t8791" x1="0.76" y1="0.00" x2="0.00" y2="1.00">
+<stop offset="0%" stop-color="#ff4f31"></stop>
+<stop offset="100%" stop-color="#ff3e27"></stop>
+</linearGradient>
+    <path class="section" d="M 92.84 75.78 A 50 50 0 0 1 86.30 84.38" fill="none" stroke="url(#linearColors17_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors18_t8791" x1="1.00" y1="0.00" x2="0.00" y2="0.85">
+<stop offset="0%" stop-color="#ff3e27"></stop>
+<stop offset="100%" stop-color="#ff2e1c"></stop>
+</linearGradient>
+    <path class="section" d="M 86.30 84.38 A 50 50 0 0 1 78.06 91.38" fill="none" stroke="url(#linearColors18_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors19_t8791" x1="1.00" y1="0.00" x2="0.00" y2="0.53">
+<stop offset="0%" stop-color="#ff2e1c"></stop>
+<stop offset="100%" stop-color="#ff1d12"></stop>
+</linearGradient>
+    <path class="section" d="M 78.06 91.38 A 50 50 0 0 1 68.51 96.45" fill="none" stroke="url(#linearColors19_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors20_t8791" x1="1.00" y1="0.00" x2="0.00" y2="0.28">
+<stop offset="0%" stop-color="#ff1d12"></stop>
+<stop offset="100%" stop-color="#ff0c08"></stop>
+</linearGradient>
+    <path class="section" d="M 68.51 96.45 A 50 50 0 0 1 58.09 99.34" fill="none" stroke="url(#linearColors20_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors21_t8791" x1="1.00" y1="0.00" x2="0.00" y2="0.05">
+<stop offset="0%" stop-color="#ff0c08"></stop>
+<stop offset="100%" stop-color="#fe0202"></stop>
+</linearGradient>
+    <path class="section" d="M 58.09 99.34 A 50 50 0 0 1 47.29 99.93" fill="none" stroke="url(#linearColors21_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors22_t8791" x1="1.00" y1="0.16" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#fe0202"></stop>
+<stop offset="100%" stop-color="#fc090a"></stop>
+</linearGradient>
+    <path class="section" d="M 47.29 99.93 A 50 50 0 0 1 36.62 98.18" fill="none" stroke="url(#linearColors22_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors23_t8791" x1="1.00" y1="0.40" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#fc090a"></stop>
+<stop offset="100%" stop-color="#fa1013"></stop>
+</linearGradient>
+    <path class="section" d="M 36.62 98.18 A 50 50 0 0 1 26.58 94.18" fill="none" stroke="url(#linearColors23_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors24_t8791" x1="1.00" y1="0.68" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#fa1013"></stop>
+<stop offset="100%" stop-color="#f8161b"></stop>
+</linearGradient>
+    <path class="section" d="M 26.58 94.18 A 50 50 0 0 1 17.63 88.11" fill="none" stroke="url(#linearColors24_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors25_t8791" x1="0.95" y1="1.00" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#f8161b"></stop>
+<stop offset="100%" stop-color="#f61d23"></stop>
+</linearGradient>
+    <path class="section" d="M 17.63 88.11 A 50 50 0 0 1 10.20 80.26" fill="none" stroke="url(#linearColors25_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors26_t8791" x1="0.60" y1="1.00" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#f61d23"></stop>
+<stop offset="100%" stop-color="#f4242b"></stop>
+</linearGradient>
+    <path class="section" d="M 10.20 80.26 A 50 50 0 0 1 4.62 70.99" fill="none" stroke="url(#linearColors26_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors27_t8791" x1="0.34" y1="1.00" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#f4242b"></stop>
+<stop offset="100%" stop-color="#f22b34"></stop>
+</linearGradient>
+    <path class="section" d="M 4.62 70.99 A 50 50 0 0 1 1.17 60.75" fill="none" stroke="url(#linearColors27_t8791)" stroke-linecap="round"></path><linearGradient id="linearColors28_t8791" x1="0.11" y1="1.00" x2="0.00" y2="0.00">
+<stop offset="0%" stop-color="#f22b34"></stop>
+<stop offset="100%" stop-color="#f0323c"></stop>
+</linearGradient>
+    <path class="section" d="M 1.17 60.75 A 50 50 0 0 1 0.00 50.00" fill="none" stroke="url(#linearColors28_t8791)" stroke-linecap="round"></path></g>
+</svg>

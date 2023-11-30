@@ -1,0 +1,64 @@
+
+/* Video Application */
+.video_slideshow {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-thumbnail-list {
+    padding: 0; margin: 0;
+    display: flex; 
+  }
+  .video-thumbnail-list-item {
+    list-style: none;
+    cursor: pointer;
+  }
+  .video-thumbnail-list-item > div {
+    margin: 0 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .video-thumbnail-icon {
+    position: relative;
+  }
+  .video-thumbnail-icon > div {
+    display: inline-block;
+    position: relative;
+  }
+  .video-thumbnail-text {
+    text-align: center;
+  }
+  .video-thumbnail-text span {
+    display: flex;
+    line-height: 1em;
+  }
+  .join-bubble {
+    overflow: visible;
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    margin-top: 2px; 
+  }
+  .cover {
+      position: absolute;
+      top: 7px;
+      left: 5px;
+      height: calc(90px - 10px);
+      width: calc(90px - 10px);
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0!important;
+  }
+  .play-button {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: calc(50% + 2px);
+      transform: translate(-50%,-50%);    
+  }
+
+  .i-amphtml-story-close-control {
+    display: block !important;
+  }
