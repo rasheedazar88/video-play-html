@@ -14,29 +14,38 @@
             publisher-logo-src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
             poster-portrait-src="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg">
                 <!-- First Slide -->
-                <amp-story-page id="slide-1">
+                <amp-story-page id="slide-1" auto-advance-after="video1">
                     <amp-story-grid-layer template="fill">
-                    <amp-video layout="fill" autoplay loop poster="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg">
-                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                    <amp-video  id="video1" 
+                                autoplay 
+                                loop 
+                                layout="responsive" 
+                                poster="https://storage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                                src="https://storage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">
                     </amp-video>
                     </amp-story-grid-layer>
                 </amp-story-page>
                 <!-- Second Slide -->
-                <amp-story-page id="slide-2">
+                <amp-story-page id="slide-2" auto-advance-after="video2">
                     <amp-story-grid-layer template="fill">
-                        <amp-video layout="fill" autoplay loop poster="https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg">
+                        <amp-video id="video2" layout="fill" autoplay loop poster="https://storage.googleapis.com/gtv-videos-bucket/sample/images/ElephantsDream.jpg">
                             <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
                         </amp-video>
                         </amp-story-grid-layer>
                 </amp-story-page>
                 <!-- Third Slide -->
-                <amp-story-page id="slide-3">
+                <amp-story-page id="slide-3" auto-advance-after="video3">
                     <amp-story-grid-layer template="fill">
-                        <amp-video layout="fill" autoplay loop poster=" https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg">
+                        <amp-video id="video3" layout="fill" autoplay loop poster=" https://storage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg">
                             <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
                         </amp-video>
                         </amp-story-grid-layer>
                 </amp-story-page>
+
+                <amp-story-progress layout="nodisplay">
+                    <div class="background" style="background-color: #4CAF50;"></div>
+                    <div class="bar" style="background-color: #8BC34A;"></div>
+                </amp-story-progress>
                 <!-- Add more slides as needed -->
         </amp-story>
     </body>
