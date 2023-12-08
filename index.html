@@ -3,120 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet" />
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-  <script async custom-element="amp-story" src="https://cdn.ampproject.org/v0/amp-story-1.0.js"></script>
-    <title>Video Development</title>
+    <title>Video Slide Story</title>
+    <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <div class="video_slideshow">
-        <ul class="video-thumbnail-list">
-          <li class="video-thumbnail-list-item">
-            <div class="video-thumbnail-item join-widget-element" data-join-story-url="https://sockup.my.join-stories.com/sont-elles-a-ma-taille/">
-              <div class="video-thumbnail-icon">
-                <div>
-                    <span class="join-bubble"><img src="icon-round.png" width="100%" height="100%" alt="icon" /></span>
-                    <picture><source srcset="./BigBuckBunny.jpg" type="image/webp"><img class="cover" src="./BigBuckBunny.jpg" alt="Story Cover"></picture>
-                    <span class="play-button"><img src="icon-play.png" width="30" height="30" alt="icon-play" /></span>
-                </div>
-              </div>
-              <div class="video-thumbnail-text">
-                <span>Is this my size?</span>
-              </div>
-            </div>         
-          </li>
-          <li class="video-thumbnail-list-item">
-            <div class="video-thumbnail-item join-widget-element" data-join-story-url="https://sockup.my.join-stories.com/3-raisons-sockup/">
-              <div class="video-thumbnail-icon">
-                <div>
-                    <span class="join-bubble"><img src="icon-round.png" width="100%" height="100%" alt="icon" /></span>
-                    <picture><source srcset="./ElephantsDream.jpg" type="image/webp"><img class="cover" src="./ElephantsDream.jpg" alt="Story Cover"></picture>
-                    <span class="play-button"><img src="icon-play.png" width="30" height="30" alt="icon-play" /></span>
-                </div>
-              </div>
-              <div class="video-thumbnail-text">
-                <span>Why SockUp?</span>
-              </div>
-            </div>
-          </li>
-          <li class="video-thumbnail-list-item">
-            <div class="video-thumbnail-item join-widget-element" data-join-story-url="https://sockup.my.join-stories.com/crash-test/">
-              <div class="video-thumbnail-icon">
-                <div>
-                    <span class="join-bubble"><img src="icon-round.png" width="100%" height="100%" alt="icon" /></span>
-                    <picture><source srcset="./ForBiggerBlazes.jpg" type="image/webp"><img class="cover" src="./ForBiggerBlazes.jpg" alt="Story Cover"></picture>
-                    <span class="play-button"><img src="icon-play.png" width="30" height="30" alt="icon-play" /></span>
-                </div>
-              </div>
-              <div class="video-thumbnail-text">
-                <span>Crash Test</span>
-              </div>
-            </div>
-          </li>
-        </ul>  
-        <div id="join-container" style="display: block;">
-            <link href="./join-modal-style.css" rel="stylesheet" />
-                <div class="join-modal-container">
-                    <div class="join-player-container">
-                        <div class="join-stories-player">
-                            <div class="join-story-player" data-story-position="1" style="height: 100%; width: 100%;">
-                                <iframe src="./shorts.html"></iframe>
-                                <img class="join-player-nav-button next active" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                                <img class="join-player-nav-button previous" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                            </div>
-                            <div class="join-story-player" data-story-position="2" style="height: 100%; width: 100%;">
-                                <iframe src="./shorts1.html"></iframe>
-                                <img class="join-player-nav-button next active" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                                <img class="join-player-nav-button previous active" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                            </div>
-                            <div class="join-story-player" data-story-position="3" style="height: 100%; width: 100%;">
-                                <iframe src="./shorts2.html"></iframe>
-                                <img class="join-player-nav-button next" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                                <img class="join-player-nav-button previous active" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgZmlsbD0ibm9uZSI+CiAgICA8cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjkiIGQ9Ik0xNyAyOS4yVjE4LjhjMC0xLjIgMS40LTIgMi41LTEuM2w3LjUgNS4yYzEgLjYgMSAyIDAgMi42bC03LjUgNS4yYy0xIC43LTIuNSAwLTIuNS0xLjNaIi8+CiAgICA8cmVjdCB3aWR0aD0iMS44IiBoZWlnaHQ9IjE1LjYiIHg9IjMwLjIiIHk9IjE2LjIiIGZpbGw9IiNmZmYiIHJ4PSIuOSIvPgo8L3N2Zz4=">
-                            </div>
-                            <button class="btn-close-shorts"></button>
-                        </div>
-                    </div>
-                </div>        
-            </div>
-            <link rel="stylesheet" href="/join-player-style.css" />
-            <link rel="stylesheet" href="/join-story-style.css" />
+    
+        <h1>Welcome to Video Story</h1>
+
+        <div class="video-main-list">
+          
         </div>
-    </div>
+
+        
 </body>
 </html>
 
+<script src="./config.js"></script>
 <script>
-      document.addEventListener('DOMContentLoaded', function () {
-            var thumbnailItems = document.querySelectorAll('.video-thumbnail-list-item');
-            var joinModalContainer = document.querySelector('.join-modal-container');
-            var joinStoryPlayer = document.querySelector('.join-player-container')
-            var storyPlayers = document.querySelectorAll('.join-story-player');
 
-            thumbnailItems.forEach(function (item, index) {
-                item.addEventListener('click', function (event) {
-                    // Toggle join-modal-container class                    
-                    joinModalContainer.classList.toggle('active');
-                    joinModalContainer.classList.toggle('mounted');
+    document.addEventListener('DOMContentLoaded', function(){
+        LoadDataConfig();
+    })
+    
+    function LoadDataConfig(){
+        const mainContainer = document.querySelector('.video-main-list');
+        const storyListContainer = document.createElement('div')
+        storyListContainer.className = 'video-storyListContainer'; 
+        mainContainer.appendChild(storyListContainer); 
 
-                    // Toggle join-story-player class for the corresponding index
-                    storyPlayers.forEach(function (player, playerIndex) {
-                        player.classList.remove('active');
-                        var delta = playerIndex === index ? 0 : (playerIndex < index ? -(index - playerIndex) : (playerIndex - index));
-                        player.setAttribute('data-position-delta', delta);
-                    });
-                    storyPlayers[index].classList.add('active');                    
-                });
-            });   
+        const storyPopupElement = document.createElement('div');
+        storyPopupElement.className = 'story_main_popup';
+        mainContainer.appendChild(storyPopupElement)
+
+        function createPopupElement(data){
+            const storyPopupHtml = `<div class="story_popupContainer">
+                                        <div class="story_exitButton">
+                                            <img src="./iconexit.svg" alt="exit" />
+                                        </div> 
+                                        <div class="story_imageContainer">
+                                            <div class="story_headerHelper"></div> 
+                                            <div class="story_storyHeader">
+                                                <div class="story_progressBar">
+                                                    <div class="story_progressBarBlock">
+                                                        <div class="story_actualProgress" style="width: 33.5%;">&nbsp;</div>                                 
+                                                    </div>
+                                                </div> 
+                                                <div class="story_storyInfo">
+                                                    <img class="story_storyInfoImage" src="${data.thumbnail}" alt=""> 
+                                                    <p class="story_headerText">${data.title}</p>
+                                                </div>
+                                            </div> 
+                                            <div class="story_storyBodyContainer">
+                                                <div class="story_imageContainer">
+                                                    <video class="story_image" controls autoplay="true" playsinline="true">
+                                                        <source src="${data.stories[0]}" type="video/mp4">
+                                                    </video>  
+                                                </div>
+                                            </div> 
+                                            <div class="story_chevronButton story_chevronButtonLeft svelte-1rj9nz0" style="display: none;">
+                                                <img src="./iconLeft.svg" alt="iconLeft"/>
+                                            </div> 
+                                            <div class="story_chevronButton strfy_chevronButtonRight svelte-1rj9nz0" style="display: flex;">
+                                                <img src="./iconRight.svg" alt="iconRight" />
+                                            </div>   
+                                        </div>
+                                    </div>`;
             
-            var closeBtn = document.querySelector('.btn-close-shorts');
-            closeBtn.addEventListener('click', function(){
-                joinModalContainer.classList.toggle('active');
-                joinModalContainer.classList.toggle('mounted');
-                storyPlayers.forEach(function (player, playerIndex) {
-                    player.classList.remove('active');
-                });
-            });
+            storyPopupElement.innerHTML = storyPopupHtml;
+
+            const exitButton = document.querySelector('.story_exitButton');
+
+            exitButton.addEventListener('click', function(){
+                storyPopupElement.innerHTML = ''
+            })
+        }
         
+
+        // Iterate through the dataConfig array
+        dataConfig.forEach((data, index) => {
+            // Create a circle container
+            const circleContainer = document.createElement('div');
+            circleContainer.className = 'video-circleContainer';
+
+            // Create the circle border
+            const circleBorder = document.createElement('div');
+            circleBorder.className = 'video-circleBorder';
+
+            // Create the image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'video-imageContainer';
+
+            // Create the image element
+            const image = document.createElement('img');
+            image.className = 'video-imageThumbnail';
+            image.src = data.thumbnail;
+            image.alt = 'thumbnail';
+
+            // Append the image to the image container
+            imageContainer.appendChild(image);
+
+            // Append the image container to the circle border
+            circleBorder.appendChild(imageContainer);
+
+            // Create the title element
+            const title = document.createElement('p');
+            title.className = 'video-circleTitle';
+            title.textContent = data.title;
+
+            // Append the title and circle border to the circle container
+            circleContainer.appendChild(circleBorder);
+            circleContainer.appendChild(title);
+
+            // Append the circle container to the main container
+            mainContainer.querySelector('.video-storyListContainer').appendChild(circleContainer);
+
+            circleContainer.addEventListener('click', function(){
+                createPopupElement(data)
+            });
+           
         });
+    }
+    
 </script>

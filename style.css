@@ -1,84 +1,193 @@
+.video-main-list {
+    margin: 0;
+}
 
-/* Video Application */
-.video_slideshow {
-    height: 100vh;
+.video-storyListContainer {
+    margin: 10px;
+    display: flex;
+    gap: 15px;
+    justify-content: left;
+    overflow-y: hidden;
+}
+
+.video-storyListContainer .video-circleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.video-storyListContainer .video-circleContainer .video-circleBorder {
+    padding: 2px;
+    border-radius: 9000px;
+    width: fit-content;
+    background: linear-gradient(red, orange);
+}
+
+.video-storyListContainer .video-circleTitle {
+    text-align: center;
+    font-size: 11px;
+    width: 80px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 15px;
+    white-space: normal;
+}
+
+.video-storyListContainer .video-imageContainer {
+    overflow: hidden;
+    border-radius: 9000px !important;
+    border: 2px solid white;
+    width: 75px; 
+    height: 75px;
+}
+
+.video-storyListContainer .video-imageThumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0 none;
+}
+
+.story_popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+.story_exitButton {
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    transition: 0.1s ease all;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.story_imageContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    width: 706.78px;
+    height: 1251px;
+    background-color: rgb(0, 0, 0);
+}
+
+.story_headerHelper {
+    background: linear-gradient(180deg,rgba(38,38,38,.8) 0%,rgba(38,38,38,0) 100%);
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 65px 0px 32px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.story_storyHeader {
+    position: absolute;
+    top: 20px;
+    z-index: 1000;
+    width: 95%;
+    z-index: 100;
+}
+
+.story_progressBar {
+    gap: 5px;
+    display: flex;
+}
+
+.story_progressBarBlock {
+    height: 2px;
+    background: rgba(255,255,255,.35);
+    border-radius: 2px;
+    flex: 1 1;
+    position: relative;
+}
+.story_progressBarBlockPassed {
+    background: white;
+}
+
+.story_actualProgress {
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: white;
+}
+
+.story_storyInfo {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.story_storyInfoImage {
+    width: 30px;
+    height: 30px;
+    border-radius: 9000px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.story_headerText {
+    color: white;
+    font-family: "Poppins";
+    font-size: 14px;
+}
+
+.story_storyBodyContainer {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.story_image {
+    width: 100%;
+    height: auto;
+}
+
+video.story_image {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.story_chevronButton {
+    position: absolute;
+    top: calc(50% - 12px);
+    border-radius: 50%;
+    background: #9ea0a3;
+    transition: 0.1s ease all;
+    width: 35px;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.video-thumbnail-list {
-    padding: 0; margin: 0;
-    display: flex; 
-  }
-  .video-thumbnail-list-item {
-    list-style: none;
-    cursor: pointer;
-  }
-  .video-thumbnail-list-item > div {
-    margin: 0 8px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .video-thumbnail-icon {
-    position: relative;
-  }
-  .video-thumbnail-icon > div {
-    display: inline-block;
-    position: relative;
-  }
-  .video-thumbnail-text {
-    text-align: center;
-  }
-  .video-thumbnail-text span {
-    display: flex;
-    line-height: 1em;
-  }
-  .join-bubble {
-    overflow: visible;
-    width: 90px;
-    height: 90px;
-    display: inline-block;
-    margin-top: 2px; 
-  }
-  .cover {
-      position: absolute;
-      top: 7px;
-      left: 5px;
-      height: calc(90px - 10px);
-      width: calc(90px - 10px);
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0!important;
-  }
-  .play-button {
-      position: absolute;
-      top: calc(50% - 1px);
-      left: calc(50% + 2px);
-      transform: translate(-50%,-50%);    
-  }
-
-  .i-amphtml-story-close-control {
-    display: block !important;
-  }
-
-  .btn-close-shorts {
-    position: absolute;
-    z-index: 99999;
-    height: 48px;
-    width: 48px;
-    cursor: pointer;
-    border: none;
-    pointer-events: auto;
-    background: none;
-    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"><rect width="1.84" height="18.84" x="16.68" y="18" fill="%23fff" rx=".92" transform="rotate(-45 16.68 18)"/><rect width="1.84" height="18.84" x="30" y="16.7" fill="%23fff" rx=".92" transform="rotate(45 30 16.7)"/></svg>');
-    right: 25%;
-    top: 5%;
-  }
-
-  @media screen and (min-width: 1200px) {
-    .btn-close-shorts {
-      
-    }
-  }
+.story_chevronButtonLeft {
+    transform: rotate(180deg);
+    left: -55px;
+}
+.strfy_chevronButtonRight {
+    right: 55px;
+}
