@@ -35,7 +35,7 @@
         storyPopupElement.className = 'story_main_popup';
         mainContainer.appendChild(storyPopupElement)
 
-        function createPopupElement(data){
+        function createPopupElement(data, currentIndex){
             function renderProgressBar(blockCount){
                 let progressBarHtml = '<div class="story_progressBar">';            
                 for (let i = 0; i < blockCount; i++) {
@@ -46,8 +46,14 @@
                 return progressBarHtml;
             }
 
-            function renderVideos(videos){
-                return `<source src="${videos[0]}" type="video/mp4">`
+            function renderVideos(dataIndex, videoIndex){
+                return `<source src="${dataIndex[videoIndex]}" type="video/mp4">`
+            }
+
+            function renderVideoonNav(source){
+                const videoSrc = document.querySelector('.story_image')
+                videoSrc.load();
+                videoSrc.querySelector('source').setAttribute('src', source)
             }
             const storyPopupHtml = `<div class="story_popupContainer">
                                         <div class="story_exitButton">
@@ -65,14 +71,14 @@
                                             <div class="story_storyBodyContainer">
                                                 <div class="story_imageContainer">
                                                     <video class="story_image" autoplay playsinline>
-                                                        ${renderVideos(data.stories)}
+                                                        ${renderVideos(data.stories, 0)}
                                                     </video>  
                                                 </div>
                                             </div> 
                                             <div class="story_chevronButton story_chevronButtonLeft">
                                                 <img src="./iconLeft.svg" alt="iconLeft"/>
                                             </div> 
-                                            <div class="story_chevronButton strfy_chevronButtonRight">
+                                            <div class="story_chevronButton story_chevronButtonRight">
                                                 <img src="./iconRight.svg" alt="iconRight" />
                                             </div>   
                                         </div>
@@ -86,21 +92,79 @@
                 storyPopupElement.innerHTML = ''
             })
 
-            // Get the video element
-            const video = document.querySelector('.story_image');
+            function setProgressBarLoading(videoIndex){
+                // Get the video element
+                const video = document.querySelector('.story_image');
 
-            // Get the progress bar and actual progress elements
-            const progressBar = document.querySelector('.story_progressBarBlock');
-            const actualProgress = document.querySelector('.story_actualProgress');
+                // Get the progress bar and actual progress elements
+                const progressBar = document.querySelectorAll('.story_progressBarBlock');
+                const actualProgress = progressBar[videoIndex].querySelector('.story_actualProgress');
+                
+                for(i=0; i<videoIndex; i++) {
+                    progressBar[videoIndex - 1].classList.add('story_progressBarBlockPassed')
+                }
 
-            // Update the progress bar width on timeupdate event of the video
-            video.addEventListener('timeupdate', () => {
-                // Calculate the progress percentage
-                const progress = (video.currentTime / video.duration) * 100;
+                // Update the progress bar width on timeupdate event of the video
+                video.addEventListener('timeupdate', () => {
+                    // Calculate the progress percentage
+                    const progress = (video.currentTime / video.duration) * 100;
 
-                // Set the width of the actual progress bar
-                actualProgress.style.width = `${progress}%`;
-            });
+                    // Set the width of the actual progress bar
+                    actualProgress.style.width = `${progress}%`;
+                });
+                
+            }
+            
+
+            let videoIndex = 0
+            setProgressBarLoading(videoIndex)
+            function movePrevSlide(){
+                storyNextBtn.setAttribute('disabled', false)
+                if (currentIndex > 0) {
+                    currentIndex = (currentIndex - 1) % dataConfig.length;
+                } 
+                if (currentIndex === 0) {
+                    storyPrevBtn.setAttribute('disabled', true);
+                }
+                if(dataConfig[currentIndex]['stories'].length > 1){
+                    renderVideoonNav(dataConfig[currentIndex]['stories'][0])
+                } else {
+                    renderVideoonNav(dataConfig[currentIndex]['stories'])
+                }
+            }
+
+            function moveNextSlide(){
+                storyPrevBtn.setAttribute('disabled', false); 
+                if(dataConfig[currentIndex]['stories'].length > 1){
+                    if (videoIndex < dataConfig[currentIndex]['stories'].length - 1) {
+                        videoIndex = (videoIndex + 1) % dataConfig[currentIndex]['stories'].length;
+                            
+                        renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
+                    } else if(videoIndex === dataConfig[currentIndex]['stories'].length - 1) {
+                        currentIndex = (currentIndex + 1) % dataConfig.length;
+                    }
+                    setProgressBarLoading(videoIndex)
+                } else {
+                    if (currentIndex < dataConfig.length - 1) {
+                        currentIndex = (currentIndex + 1) % dataConfig.length;
+                    }
+                    if (currentIndex === dataConfig.length - 1) {
+                        storyNextBtn.setAttribute('disabled', true);
+                    }
+                    renderVideoonNav(dataConfig[currentIndex]['stories'])
+                }
+                
+            }
+            const storyPrevBtn = document.querySelector('.story_chevronButtonLeft');
+            const storyNextBtn = document.querySelector('.story_chevronButtonRight');
+
+            storyPrevBtn.addEventListener('click', function(){
+                movePrevSlide()
+            })
+
+            storyNextBtn.addEventListener('click', function(){
+                moveNextSlide()
+            })
         }
         
 
@@ -143,7 +207,7 @@
             mainContainer.querySelector('.video-storyListContainer').appendChild(circleContainer);
 
             circleContainer.addEventListener('click', function(){
-                createPopupElement(data)
+                createPopupElement(data, index)
             });
            
         });

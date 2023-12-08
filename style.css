@@ -185,11 +185,18 @@ video.story_image {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+}
+.story_chevronButton[disabled=true] {
+    display: none;
+}
+.story_chevronButton:hover {
+    background-color: #fff;
 }
 .story_chevronButtonLeft {
     transform: rotate(180deg);
     left: -55px;
 }
-.strfy_chevronButtonRight {
+.story_chevronButtonRight {
     right: -55px;
 }

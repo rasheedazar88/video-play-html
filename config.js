@@ -17,7 +17,8 @@ const dataConfig = [
         thumbnail: 'img3.png',
         title: 'Solide comme un roc 💪',
         stories: [
-            "https://cdn.shopify.com/videos/c/vp/4db7b032ddca47a8ace6a51c84b2aa68/4db7b032ddca47a8ace6a51c84b2aa68.HD-1080p-7.2Mbps-19338842.mp4"
+            "https://cdn.shopify.com/videos/c/vp/4db7b032ddca47a8ace6a51c84b2aa68/4db7b032ddca47a8ace6a51c84b2aa68.HD-1080p-7.2Mbps-19338842.mp4",
+            "https://cdn.shopify.com/videos/c/vp/59fea322f952442fa51cac51c350bf6f/59fea322f952442fa51cac51c350bf6f.HD-1080p-7.2Mbps-19752158.mp4",
         ]
     },
     {
