@@ -45,6 +45,10 @@
 
                 return progressBarHtml;
             }
+
+            function renderVideos(videos){
+                return `<source src="${videos[0]}" type="video/mp4">`
+            }
             const storyPopupHtml = `<div class="story_popupContainer">
                                         <div class="story_exitButton">
                                             <img src="./iconexit.svg" alt="exit" />
@@ -61,7 +65,7 @@
                                             <div class="story_storyBodyContainer">
                                                 <div class="story_imageContainer">
                                                     <video class="story_image" autoplay playsinline>
-                                                        <source src="${data.stories[0]}" type="video/mp4">
+                                                        ${renderVideos(data.stories)}
                                                     </video>  
                                                 </div>
                                             </div> 
@@ -91,11 +95,11 @@
 
             // Update the progress bar width on timeupdate event of the video
             video.addEventListener('timeupdate', () => {
-            // Calculate the progress percentage
-            const progress = (video.currentTime / video.duration) * 100;
+                // Calculate the progress percentage
+                const progress = (video.currentTime / video.duration) * 100;
 
-            // Set the width of the actual progress bar
-            actualProgress.style.width = `${progress}%`;
+                // Set the width of the actual progress bar
+                actualProgress.style.width = `${progress}%`;
             });
         }
         
