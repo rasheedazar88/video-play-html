@@ -134,23 +134,35 @@
             }
 
             function moveNextSlide(){
-                storyPrevBtn.setAttribute('disabled', false); 
-                if(dataConfig[currentIndex]['stories'].length > 1){
-                    if (videoIndex < dataConfig[currentIndex]['stories'].length - 1) {
-                        videoIndex = (videoIndex + 1) % dataConfig[currentIndex]['stories'].length;
+                // storyPrevBtn.setAttribute('disabled', false); 
+                // if(dataConfig[currentIndex]['stories'].length > 1){
+                //     if (videoIndex < dataConfig[currentIndex]['stories'].length - 1) {
+                //         videoIndex = (videoIndex + 1) % dataConfig[currentIndex]['stories'].length;
                             
-                        renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
-                    } else if(videoIndex === dataConfig[currentIndex]['stories'].length - 1) {
-                        currentIndex = (currentIndex + 1) % dataConfig.length;
-                    }
-                    setProgressBarLoading(videoIndex)
+                //         renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
+                //     } else if(videoIndex === dataConfig[currentIndex]['stories'].length - 1) {
+                //         currentIndex = (currentIndex + 1) % dataConfig.length;
+                //     }
+                //     setProgressBarLoading(videoIndex)
+                // } else {
+                //     if (currentIndex < dataConfig.length - 1) {
+                //         currentIndex = (currentIndex + 1) % dataConfig.length;
+                //     }
+                //     if (currentIndex === dataConfig.length - 1) {
+                //         storyNextBtn.setAttribute('disabled', true);
+                //     }
+                //     renderVideoonNav(dataConfig[currentIndex]['stories'])
+                // }
+                storyPrevBtn.setAttribute('disabled', false)
+                if (currentIndex < dataConfig.length - 1) {
+                    currentIndex = (currentIndex + 1) % dataConfig.length;
+                } 
+                if (currentIndex === dataConfig.length - 1) {
+                    storyNextBtn.setAttribute('disabled', true);
+                }
+                if(dataConfig[currentIndex]['stories'].length > 1){
+                    renderVideoonNav(dataConfig[currentIndex]['stories'][0])
                 } else {
-                    if (currentIndex < dataConfig.length - 1) {
-                        currentIndex = (currentIndex + 1) % dataConfig.length;
-                    }
-                    if (currentIndex === dataConfig.length - 1) {
-                        storyNextBtn.setAttribute('disabled', true);
-                    }
                     renderVideoonNav(dataConfig[currentIndex]['stories'])
                 }
                 
