@@ -36,6 +36,15 @@
         mainContainer.appendChild(storyPopupElement)
 
         function createPopupElement(data){
+            function renderProgressBar(blockCount){
+                let progressBarHtml = '<div class="story_progressBar">';            
+                for (let i = 0; i < blockCount; i++) {
+                    progressBarHtml += '<div class="story_progressBarBlock"><div class="story_actualProgress">&nbsp;</div></div>';
+                }
+                progressBarHtml += '</div>';
+
+                return progressBarHtml;
+            }
             const storyPopupHtml = `<div class="story_popupContainer">
                                         <div class="story_exitButton">
                                             <img src="./iconexit.svg" alt="exit" />
@@ -43,11 +52,7 @@
                                         <div class="story_imageContainer">
                                             <div class="story_headerHelper"></div> 
                                             <div class="story_storyHeader">
-                                                <div class="story_progressBar">
-                                                    <div class="story_progressBarBlock">
-                                                        <div class="story_actualProgress" style="width: 33.5%;">&nbsp;</div>                                 
-                                                    </div>
-                                                </div> 
+                                                ${renderProgressBar(data.stories.length)}
                                                 <div class="story_storyInfo">
                                                     <img class="story_storyInfoImage" src="${data.thumbnail}" alt=""> 
                                                     <p class="story_headerText">${data.title}</p>
@@ -55,15 +60,15 @@
                                             </div> 
                                             <div class="story_storyBodyContainer">
                                                 <div class="story_imageContainer">
-                                                    <video class="story_image" controls autoplay="true" playsinline="true">
+                                                    <video class="story_image" autoplay playsinline>
                                                         <source src="${data.stories[0]}" type="video/mp4">
                                                     </video>  
                                                 </div>
                                             </div> 
-                                            <div class="story_chevronButton story_chevronButtonLeft svelte-1rj9nz0" style="display: none;">
+                                            <div class="story_chevronButton story_chevronButtonLeft">
                                                 <img src="./iconLeft.svg" alt="iconLeft"/>
                                             </div> 
-                                            <div class="story_chevronButton strfy_chevronButtonRight svelte-1rj9nz0" style="display: flex;">
+                                            <div class="story_chevronButton strfy_chevronButtonRight">
                                                 <img src="./iconRight.svg" alt="iconRight" />
                                             </div>   
                                         </div>
@@ -76,6 +81,22 @@
             exitButton.addEventListener('click', function(){
                 storyPopupElement.innerHTML = ''
             })
+
+            // Get the video element
+            const video = document.querySelector('.story_image');
+
+            // Get the progress bar and actual progress elements
+            const progressBar = document.querySelector('.story_progressBarBlock');
+            const actualProgress = document.querySelector('.story_actualProgress');
+
+            // Update the progress bar width on timeupdate event of the video
+            video.addEventListener('timeupdate', () => {
+            // Calculate the progress percentage
+            const progress = (video.currentTime / video.duration) * 100;
+
+            // Set the width of the actual progress bar
+            actualProgress.style.width = `${progress}%`;
+            });
         }
         
 
