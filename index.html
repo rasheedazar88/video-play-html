@@ -78,7 +78,7 @@
                                                     </video>  
                                                 </div>
                                             </div> 
-                                            <div class="story_chevronButton story_chevronButtonLeft">
+                                            <div class="story_chevronButton story_chevronButtonLeft" disabled="true">
                                                 <img src="./iconLeft.svg" alt="iconLeft"/>
                                             </div> 
                                             <div class="story_chevronButton story_chevronButtonRight">
@@ -122,21 +122,33 @@
             
             setProgressBarLoading(videoIndex)
             function movePrevSlide(){
-                storyNextBtn.setAttribute('disabled', false)
-                if (currentIndex > 0) {
-                    currentIndex = (currentIndex - 1) % dataConfig.length;
-                } 
-                if (currentIndex === 0) {
-                    storyPrevBtn.setAttribute('disabled', true);
-                }
-                if(dataConfig[currentIndex]['stories'].length > 1){
-                    renderVideoonNav(dataConfig[currentIndex]['stories'][0])
+                storyNextBtn.removeAttribute('disabled');
+                if (videoIndex > 0) {
+                    // If videoIndex is greater than 0, decrement it
+                    videoIndex--;
                 } else {
-                    renderVideoonNav(dataConfig[currentIndex]['stories'])
+                    // If videoIndex is 0, check if currentIndex is greater than 0
+                    if (currentIndex > 0) {
+                        // Move to the previous index
+                        currentIndex--;
+
+                        // Set videoIndex to the last index of the previous section
+                        const previousVideosLength = dataConfig[currentIndex].stories.length;
+                        videoIndex = previousVideosLength - 1;
+                    } else {
+                        // Handle the case when currentIndex is already at 0
+                        console.log("Already at the first element.");
+                        storyPrevBtn.setAttribute('disabled', true);
+                        return; // Optionally, you can choose what to do when at the first element
+                    }
                 }
+
+                // Render the video based on the updated currentIndex and videoIndex
+                renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex]);
             }
 
             function moveNextSlide(){
+                storyPrevBtn.removeAttribute('disabled');
                 const currentVideosLength = dataConfig[currentIndex].stories.length;
                 if (videoIndex < currentVideosLength - 1) {
                     // If videoIndex is less than the last index in config array, increment it
