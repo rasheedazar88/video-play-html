@@ -87,7 +87,7 @@
                                                     </video>  
                                                 </div>
                                             </div> 
-                                            <div class="story_chevronButton story_chevronButtonLeft" disabled="true">
+                                            <div class="story_chevronButton story_chevronButtonLeft">
                                                 <img src="./iconLeft.svg" alt="iconLeft"/>
                                             </div> 
                                             <div class="story_chevronButton story_chevronButtonRight">
@@ -97,7 +97,10 @@
                                     </div>`;
             
             storyPopupElement.innerHTML = storyPopupHtml;
-
+            if(currentIndex < 1) {
+                storyPopupElement.querySelector('.story_chevronButtonLeft').setAttribute('disabled', true)
+            }
+            
             const exitButton = document.querySelector('.story_exitButton');
 
             exitButton.addEventListener('click', function(){
@@ -121,13 +124,14 @@
                     // Calculate the progress percentage
                     const progress = (video.currentTime / video.duration) * 100;
 
+                    if(progress >=100) {
+                        moveNextSlide()
+                    }
                     // Set the width of the actual progress bar
                     actualProgress.style.width = `${progress}%`;
                 });
                 
             }
-            
-
             
             setProgressBarLoading(videoIndex)
             function movePrevSlide(){
@@ -146,8 +150,8 @@
                         videoIndex = previousVideosLength - 1;
                     } else {
                         // Handle the case when currentIndex is already at 0
-                        console.log("Already at the first element.");
                         storyPrevBtn.setAttribute('disabled', true);
+                        console.log("Already at the first element.");
                         return; // Optionally, you can choose what to do when at the first element
                     }
                 }

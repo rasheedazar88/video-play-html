@@ -9,7 +9,9 @@
     justify-content: left;
     overflow-y: hidden;
 }
-
+.video-storyListContainer::-webkit-scrollbar {
+    display: none;
+}
 .video-storyListContainer .video-circleContainer {
     display: flex;
     flex-direction: column;
