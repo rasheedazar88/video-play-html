@@ -13,14 +13,49 @@
         <div class="video-main-list">
           
         </div>
+        <div class="story_main_popup"></div>
 
         
 </body>
 </html>
-
-<script src="./config.js"></script>
 <script>
-
+    const dataConfig = [
+        {
+            thumbnail: 'https://cdn.shopify.com/s/files/1/0768/2860/6797/files/preview_images/79fd44ce08c64d9f85149653422b8e1d.thumbnail.0000000000.jpg?v=1697045931',
+            title: 'Pourquoi nous choisir ?',
+            stories: [
+                "https://cdn.shopify.com/videos/c/vp/79fd44ce08c64d9f85149653422b8e1d/79fd44ce08c64d9f85149653422b8e1d.HD-1080p-7.2Mbps-19337928.mp4"
+            ]
+        },
+        {
+            thumbnail: 'https://cdn.shopify.com/s/files/1/0768/2860/6797/files/Story_Custom_Thumbnail_plus_confortables__1697055610101.png?v=1697055613',
+            title: 'Plus confortables ? 🧵',
+            stories: [
+                "https://cdn.shopify.com/videos/c/vp/08afc4eb43724fc393e723512f4d2630/08afc4eb43724fc393e723512f4d2630.HD-1080p-7.2Mbps-19338787.mp4",
+                "https://cdn.shopify.com/videos/c/vp/59fea322f952442fa51cac51c350bf6f/59fea322f952442fa51cac51c350bf6f.HD-1080p-7.2Mbps-19752158.mp4",
+            ]
+        },
+        {
+            thumbnail: 'https://cdn.shopify.com/s/files/1/0768/2860/6797/files/Story_Custom_Thumbnail_Solide_comme_un_roc__1697055649359.png?v=1697055652',
+            title: 'Solide comme un roc 💪',
+            stories: [
+                "https://cdn.shopify.com/videos/c/vp/4db7b032ddca47a8ace6a51c84b2aa68/4db7b032ddca47a8ace6a51c84b2aa68.HD-1080p-7.2Mbps-19338842.mp4",
+                "https://cdn.shopify.com/videos/c/vp/59fea322f952442fa51cac51c350bf6f/59fea322f952442fa51cac51c350bf6f.HD-1080p-7.2Mbps-19752158.mp4",
+            ]
+        },
+        {
+            thumbnail: 'https://cdn.shopify.com/s/files/1/0768/2860/6797/files/preview_images/e45d57071f40414bbffb22a820c0ff57.thumbnail.0000000000.jpg?v=1698042902',
+            title: 'Vos Outfits ❤️',
+            stories: [
+                "https://cdn.shopify.com/videos/c/vp/e45d57071f40414bbffb22a820c0ff57/e45d57071f40414bbffb22a820c0ff57.HD-1080p-7.2Mbps-19751821.mp4",
+                "https://cdn.shopify.com/videos/c/vp/643c52f231b04a2bb6f8ea3dde1d4ef0/643c52f231b04a2bb6f8ea3dde1d4ef0.HD-1080p-7.2Mbps-19752008.mp4",
+                "https://cdn.shopify.com/videos/c/vp/59fea322f952442fa51cac51c350bf6f/59fea322f952442fa51cac51c350bf6f.HD-1080p-7.2Mbps-19752158.mp4",
+                "https://cdn.shopify.com/videos/c/vp/68cceeec72524dbc913ae61a086652db/68cceeec72524dbc913ae61a086652db.HD-1080p-7.2Mbps-19752380.mp4",
+                "https://cdn.shopify.com/videos/c/vp/1d4699716fe348b69d8f7b78dd264796/1d4699716fe348b69d8f7b78dd264796.HD-1080p-7.2Mbps-19752701.mp4"
+            ]
+        }
+    ]
+  
     document.addEventListener('DOMContentLoaded', function(){
         LoadDataConfig();
     })
@@ -31,9 +66,9 @@
         storyListContainer.className = 'video-storyListContainer'; 
         mainContainer.appendChild(storyListContainer); 
 
-        const storyPopupElement = document.createElement('div');
+        const storyPopupElement = document.querySelector('.story_main_popup');
         storyPopupElement.className = 'story_main_popup';
-        mainContainer.appendChild(storyPopupElement)
+        // mainContainer.appendChild(storyPopupElement)
 
         function createPopupElement(data, index){
             let currentIndex = index;
@@ -100,23 +135,16 @@
             if(currentIndex < 1) {
                 storyPopupElement.querySelector('.story_chevronButtonLeft').setAttribute('disabled', true)
             }
-            
             const exitButton = document.querySelector('.story_exitButton');
 
             exitButton.addEventListener('click', function(){
                 storyPopupElement.innerHTML = ''
             })
 
-            function setHeight(){
-                const wrapper = document.querySelector('.story_imageContainer')
-                const videoImage = document.querySelector('.story_image');
-
-                
-            }
             function setProgressBarLoading(videoIndex){
                 // Get the video element
                 const video = document.querySelector('.story_image');
-                
+
                 // Get the progress bar and actual progress elements
                 const progressBar = document.querySelectorAll('.story_progressBarBlock');
                 const actualProgress = progressBar[videoIndex].querySelector('.story_actualProgress');
@@ -129,7 +157,6 @@
                 video.addEventListener('timeupdate', () => {
                     // Calculate the progress percentage
                     const progress = (video.currentTime / video.duration) * 100;
-
                     if(progress >=100) {
                         moveNextSlide()
                     }
@@ -138,6 +165,8 @@
                 });
                 
             }
+            
+
             
             setProgressBarLoading(videoIndex)
             function movePrevSlide(){
@@ -156,8 +185,8 @@
                         videoIndex = previousVideosLength - 1;
                     } else {
                         // Handle the case when currentIndex is already at 0
-                        storyPrevBtn.setAttribute('disabled', true);
                         console.log("Already at the first element.");
+                        storyPrevBtn.setAttribute('disabled', true);
                         return; // Optionally, you can choose what to do when at the first element
                     }
                 }
@@ -191,8 +220,20 @@
                 setProgressBarLoading(videoIndex)
                 if (isLastConfig) {
                     storyNextBtn.setAttribute('disabled', true);
+                    const video = document.querySelector('.story_image');
+                    const actualProgress = document.querySelector('.story_progressBar .story_actualProgress')
+                    video.addEventListener('timeupdate', () => {
+                        // Calculate the progress percentage
+                        const progress = (video.currentTime / video.duration) * 100;
+                        
+                        if(progress >=97) {
+                            storyPopupElement.innerHTML = ''
+                        }
+                        // Set the width of the actual progress bar
+                        actualProgress.style.width = `${progress}%`;
+                    });
+                    
                 } 
-                
             }
             const storyPrevBtn = document.querySelector('.story_chevronButtonLeft');
             const storyNextBtn = document.querySelector('.story_chevronButtonRight');
@@ -203,10 +244,6 @@
 
             storyNextBtn.addEventListener('click', function(){
                 moveNextSlide()
-            })
-
-            window.addEventListener('resize', function(){
-                setHeight();
             })
         }
         
