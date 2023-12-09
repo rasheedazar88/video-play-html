@@ -10,7 +10,8 @@ const dataConfig = [
         thumbnail: 'img2.png',
         title: 'Plus confortables ? 🧵',
         stories: [
-            "https://cdn.shopify.com/videos/c/vp/08afc4eb43724fc393e723512f4d2630/08afc4eb43724fc393e723512f4d2630.HD-1080p-7.2Mbps-19338787.mp4"
+            "https://cdn.shopify.com/videos/c/vp/08afc4eb43724fc393e723512f4d2630/08afc4eb43724fc393e723512f4d2630.HD-1080p-7.2Mbps-19338787.mp4",
+            "https://cdn.shopify.com/videos/c/vp/59fea322f952442fa51cac51c350bf6f/59fea322f952442fa51cac51c350bf6f.HD-1080p-7.2Mbps-19752158.mp4",
         ]
     },
     {

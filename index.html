@@ -35,7 +35,10 @@
         storyPopupElement.className = 'story_main_popup';
         mainContainer.appendChild(storyPopupElement)
 
-        function createPopupElement(data, currentIndex){
+        function createPopupElement(data, index){
+            let currentIndex = index;
+            let videoIndex = 0;
+            
             function renderProgressBar(blockCount){
                 let progressBarHtml = '<div class="story_progressBar">';            
                 for (let i = 0; i < blockCount; i++) {
@@ -116,7 +119,7 @@
             }
             
 
-            let videoIndex = 0
+            
             setProgressBarLoading(videoIndex)
             function movePrevSlide(){
                 storyNextBtn.setAttribute('disabled', false)
@@ -134,38 +137,26 @@
             }
 
             function moveNextSlide(){
-                // storyPrevBtn.setAttribute('disabled', false); 
-                // if(dataConfig[currentIndex]['stories'].length > 1){
-                //     if (videoIndex < dataConfig[currentIndex]['stories'].length - 1) {
-                //         videoIndex = (videoIndex + 1) % dataConfig[currentIndex]['stories'].length;
-                            
-                //         renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
-                //     } else if(videoIndex === dataConfig[currentIndex]['stories'].length - 1) {
-                //         currentIndex = (currentIndex + 1) % dataConfig.length;
-                //     }
-                //     setProgressBarLoading(videoIndex)
-                // } else {
-                //     if (currentIndex < dataConfig.length - 1) {
-                //         currentIndex = (currentIndex + 1) % dataConfig.length;
-                //     }
-                //     if (currentIndex === dataConfig.length - 1) {
-                //         storyNextBtn.setAttribute('disabled', true);
-                //     }
-                //     renderVideoonNav(dataConfig[currentIndex]['stories'])
-                // }
-                storyPrevBtn.setAttribute('disabled', false)
-                if (currentIndex < dataConfig.length - 1) {
-                    currentIndex = (currentIndex + 1) % dataConfig.length;
-                } 
-                if (currentIndex === dataConfig.length - 1) {
-                    storyNextBtn.setAttribute('disabled', true);
-                }
-                if(dataConfig[currentIndex]['stories'].length > 1){
-                    renderVideoonNav(dataConfig[currentIndex]['stories'][0])
+                const currentVideosLength = dataConfig[currentIndex].stories.length;
+                if (videoIndex < currentVideosLength - 1) {
+                    // If videoIndex is less than the last index in config array, increment it
+                    videoIndex++;
                 } else {
-                    renderVideoonNav(dataConfig[currentIndex]['stories'])
+                    // If videoIndex is at the last index, check config length
+                    if (currentVideosLength > 1) {
+                        // If config length is greater than 1, move to the next index
+                        currentIndex++;
+                        videoIndex = 0;
+                    } else {
+                        // If config length is 1, just increment currentIndex
+                        currentIndex++;
+                    }
                 }
-                
+                const isLastConfig = currentIndex === dataConfig.length - 1 && videoIndex === currentVideosLength - 1;
+                renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
+                if (isLastConfig) {
+                    storyNextBtn.setAttribute('disabled', true);
+                } 
             }
             const storyPrevBtn = document.querySelector('.story_chevronButtonLeft');
             const storyNextBtn = document.querySelector('.story_chevronButtonRight');
