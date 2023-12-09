@@ -49,6 +49,15 @@
                 return progressBarHtml;
             }
 
+            function renderProgressBaronNav(count) {
+                let ProgressBar = document.querySelector('.story_progressBar')
+                ProgressBar.innerHTML = ''
+                let child = '<div class="story_progressBarBlock"><div class="story_actualProgress">&nbsp;</div></div>'
+                for(let j=0; j<count; j++) {
+                    ProgressBar.insertAdjacentHTML('beforeend', child)
+                }
+            }
+
             function renderVideos(dataIndex, videoIndex){
                 return `<source src="${dataIndex[videoIndex]}" type="video/mp4">`
             }
@@ -104,7 +113,7 @@
                 const actualProgress = progressBar[videoIndex].querySelector('.story_actualProgress');
                 
                 for(i=0; i<videoIndex; i++) {
-                    progressBar[videoIndex - 1].classList.add('story_progressBarBlockPassed')
+                    progressBar[i].classList.add('story_progressBarBlockPassed')
                 }
 
                 // Update the progress bar width on timeupdate event of the video
@@ -144,7 +153,9 @@
                 }
 
                 // Render the video based on the updated currentIndex and videoIndex
+                renderProgressBaronNav(dataConfig[currentIndex].stories.length)
                 renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex]);
+                setProgressBarLoading(videoIndex)
             }
 
             function moveNextSlide(){
@@ -165,10 +176,13 @@
                     }
                 }
                 const isLastConfig = currentIndex === dataConfig.length - 1 && videoIndex === currentVideosLength - 1;
-                renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])
+                renderVideoonNav(dataConfig[currentIndex]['stories'][videoIndex])                
+                renderProgressBaronNav(dataConfig[currentIndex].stories.length)
+                setProgressBarLoading(videoIndex)
                 if (isLastConfig) {
                     storyNextBtn.setAttribute('disabled', true);
                 } 
+                
             }
             const storyPrevBtn = document.querySelector('.story_chevronButtonLeft');
             const storyNextBtn = document.querySelector('.story_chevronButtonRight');
